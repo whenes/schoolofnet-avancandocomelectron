@@ -1,0 +1,41 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "App exemplo do curso de Electron avançado",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development electron .",
+    "build": "cross-env NODE_ENV=production electron-builder -p always",
+    "build:dir": "cross-env NODE_ENV=production electron-builder -p always --dir",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Whenes Oliveira <whenes.oliveira@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^10.0.0",
+    "electron-builder": "^23.3.3",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "electron-updater": "^5.2.1",
+    "mousetrap": "^1.6.5"
+  },
+  "build": {
+    "appId": "com.schoolofnet.electron-curso",
+    "productName": "Avançando com Electron",
+    "publish": {
+      "provider": "github",
+      "owner": "whenes",
+      "repo": "schoolofnet-avancandocomelectron"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "tray.png",
+      "target": "nsis"
+    }
+  }
+}
